@@ -1,0 +1,17 @@
+import { Outlet } from 'react-router-dom';
+import { LinkWrapper, NavBar, NavLinkStyled } from './Header.styled';
+import { Container } from 'styles/GlobalStyles';
+import { Suspense } from 'react';
+
+export const Header = () => {
+  return (
+    <NavBar>
+      <Container>
+        <LinkWrapper>
+          <NavLinkStyled to="/">Home</NavLinkStyled>
+          <NavLinkStyled to="/movies">Movies</NavLinkStyled>
+        </LinkWrapper>
+      </Container>
+    </NavBar>
+  );
+};
