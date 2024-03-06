@@ -8,15 +8,11 @@ import { CastList } from './Cast.styled';
 export const Cast = () => {
   const { movieID } = useParams();
   const [actors, setActors] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-
     fetchCast(movieID)
       .then(({ cast }) => setActors(cast))
-      .catch(error => console.error(error))
-      .finally(setLoading(false));
+      .catch(error => console.error(error));
   }, [movieID]);
 
   return (

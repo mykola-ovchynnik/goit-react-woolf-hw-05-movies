@@ -8,17 +8,13 @@ import { ReviewsList } from './Reviews.styled';
 export const Reviews = () => {
   const { movieID } = useParams();
   const [movie, setMovie] = useState(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-
     fetchReviews(movieID)
       .then(({ results }) => {
         setMovie(results);
       })
-      .catch(error => console.error(error))
-      .finally(setLoading(false));
+      .catch(error => console.error(error));
   }, [movieID]);
 
   if (!movie) {

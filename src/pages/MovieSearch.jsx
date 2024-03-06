@@ -33,6 +33,7 @@ export const MovieSearch = () => {
         <SearchForm onMovieSelect={onMovieSelect} />
         <MovieList movies={movies} />
         {loading && <Loader />}
+        {error && <h2>{error}</h2>}
       </Container>
     </Section>
   );

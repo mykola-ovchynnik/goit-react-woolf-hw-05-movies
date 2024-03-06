@@ -1,4 +1,5 @@
-import { Link, Outlet, Route, Routes, useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
+import placeholder from '../../images/no_img.png';
 import {
   AdditionalInfoItem,
   AdditionalInfoWrapper,
@@ -6,8 +7,7 @@ import {
   DetailsWrapper,
   MainDetails,
 } from './MovieDetails.styled';
-import { Suspense, useEffect, useState } from 'react';
-import { fetchCast } from 'service/movie-service';
+import { Suspense } from 'react';
 import { LinkButton } from 'styles/GlobalStyles';
 
 export const MovieDetails = ({
@@ -20,9 +20,6 @@ export const MovieDetails = ({
 }) => {
   const location = useLocation();
 
-  const defaultImg =
-    'https://ireland.apollo.olxcdn.com/v1/files/0iq0gb9ppip8-UA/image;s=1000x700';
-
   const userScorePercent = (vote_average * 10).toFixed(0);
 
   const formattedGenres = genres.map(genre => genre.name).join(', ');
@@ -34,7 +31,7 @@ export const MovieDetails = ({
           src={
             poster_path
               ? `https://image.tmdb.org/t/p/w500/${poster_path}`
-              : defaultImg
+              : placeholder
           }
           width={250}
           alt="poster"
@@ -48,6 +45,7 @@ export const MovieDetails = ({
           <p>{formattedGenres}</p>
         </Details>
       </DetailsWrapper>
+
       <AdditionalInfoWrapper>
         <AdditionalInfoItem>
           <LinkButton to={`/movies/${id}/cast`} state={{ from: location }}>
