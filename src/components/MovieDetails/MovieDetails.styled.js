@@ -20,8 +20,14 @@ export const Details = styled.div`
 
 export const AdditionalInfoWrapper = styled.ul`
   display: flex;
-  flex-direction: column;
+
   gap: 10px;
 `;
 
 export const AdditionalInfoItem = styled.li``;
+
+export const AdditionalInfoHeader = styled.h3`
+  margin-bottom: 10px;
+  font-size: 24px;
+  text-align: center;
+`;

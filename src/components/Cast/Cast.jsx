@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { fetchCast } from 'service/movie-service';
 import { CastItem } from './CastItem.jsx/CastItem';
 import { CastList } from './Cast.styled';
+import { AdditionalInfoHeader } from 'components/MovieDetails/MovieDetails.styled';
 
 const Cast = () => {
   const { movieID } = useParams();
@@ -17,7 +18,7 @@ const Cast = () => {
 
   return (
     <div>
-      <h2>Movie Cast</h2>
+      <AdditionalInfoHeader>Movie Cast</AdditionalInfoHeader>
       <CastList>
         {actors.map(({ id, profile_path, name, character }) => (
           <CastItem
