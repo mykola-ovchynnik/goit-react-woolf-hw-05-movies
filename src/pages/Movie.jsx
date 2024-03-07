@@ -5,7 +5,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import { fetchMovie } from 'service/movie-service';
 import { Container, LinkButton, Section } from 'styles/GlobalStyles';
 
-export const Movie = () => {
+const Movie = () => {
   const [movie, setMovie] = useState(null);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -33,3 +33,5 @@ export const Movie = () => {
     </Section>
   );
 };
+
+export default Movie;

@@ -4,7 +4,7 @@ import { MovieList } from 'components/MovieList/MovieList';
 import { Container, PageHeader, Section } from 'styles/GlobalStyles';
 import { Loader } from 'components/Loader/Loader';
 
-export const Home = () => {
+const Home = () => {
   const [movies, setMovies] = useState([]);
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -29,3 +29,5 @@ export const Home = () => {
     </Section>
   );
 };
+
+export default Home;

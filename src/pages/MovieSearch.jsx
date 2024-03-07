@@ -6,7 +6,7 @@ import { useSearchParams } from 'react-router-dom';
 import { fetchSearchMovie } from 'service/movie-service';
 import { Container, PageHeader, Section } from 'styles/GlobalStyles';
 
-export const MovieSearch = () => {
+const MovieSearch = () => {
   const [search, setSearchParams] = useSearchParams();
   const [movies, setmovies] = useState([]);
   const [error, setError] = useState('');
@@ -38,3 +38,5 @@ export const MovieSearch = () => {
     </Section>
   );
 };
+
+export default MovieSearch;

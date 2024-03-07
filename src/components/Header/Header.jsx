@@ -1,7 +1,5 @@
-import { Outlet } from 'react-router-dom';
 import { LinkWrapper, NavBar, NavLinkStyled } from './Header.styled';
 import { Container } from 'styles/GlobalStyles';
-import { Suspense } from 'react';
 
 export const Header = () => {
   return (

@@ -5,7 +5,7 @@ import { ReviewItem } from './ReviewItem/ReviewItem';
 import { fetchReviews } from 'service/movie-service';
 import { ReviewsList } from './Reviews.styled';
 
-export const Reviews = () => {
+const Reviews = () => {
   const { movieID } = useParams();
   const [movie, setMovie] = useState(null);
 
@@ -33,3 +33,5 @@ export const Reviews = () => {
     </ReviewsList>
   );
 };
+
+export default Reviews;

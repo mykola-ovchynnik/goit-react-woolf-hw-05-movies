@@ -5,7 +5,7 @@ import { fetchCast } from 'service/movie-service';
 import { CastItem } from './CastItem.jsx/CastItem';
 import { CastList } from './Cast.styled';
 
-export const Cast = () => {
+const Cast = () => {
   const { movieID } = useParams();
   const [actors, setActors] = useState([]);
 
@@ -31,3 +31,5 @@ export const Cast = () => {
     </div>
   );
 };
+
+export default Cast;
